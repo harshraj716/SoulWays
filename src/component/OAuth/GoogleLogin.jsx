@@ -3,9 +3,8 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import showToast from '../../Utils/toastUtils';
-import { toast } from 'react-toastify';
 import { auth } from '../../firebase/firebaseConfig';
+import { toast } from 'react-hot-toast';
 
 const GoogleLogin = () => {
 
@@ -15,20 +14,20 @@ const GoogleLogin = () => {
     const handleGoogleSignIn = async () => {
       try {
         await signInWithGoogle();
-
+         toast.success('user login with Google successfully')
       } catch (error) {
         console.error('Google sign-in error:', error);
-        showToast(toast, 'Login failed', error.message, 'error');
+        toast.error('failed to login with Google');
+    
       }
     };
   
     useEffect(() => {
       if (user) {
-        showToast(toast, 'User Login successfully', null, 'success');
         console.log(user);
-        navigate('/home');
+        navigate('/');
       }
-    }, [user, navigate, toast]);
+    }, [user, navigate]);
   return (
     <>
        <p className="social-text loginp"> Sign in with social platforms</p>
