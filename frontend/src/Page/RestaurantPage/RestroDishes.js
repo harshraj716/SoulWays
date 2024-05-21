@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import banner from '../../images/food_banner.jpg';
 import { ImLocation2 } from "react-icons/im";
+import dishGif from '../../images/dish.gif'
 import Spinner from "../../CommomData/Spinner";
 
 const RestroDishes = () => {
@@ -121,6 +122,7 @@ const RestroDishes = () => {
                       <span className="text-purple-600 font-bold rounded">
                         ${dish.price}
                       </span>
+                      <img src={dishGif} className="w-12 h-10"/>
                     </div>
                   </div>
                 </div>

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import SearchBox from "../../component/HomeSection/SearchBox";
 import usePagination from "../../context/usePagination";
 import { motion, AnimatePresence } from "framer-motion";
-// import SkeletonCard from "../../CommomData/SkeletonCard";
+import Spinner from "../../CommomData/Spinner";
 import { ImLocation2 } from "react-icons/im";
-// import placegif from '../../images/place.gif'
+import placegif from '../../images/place.gif'
 
 const BASE_URL = "http://localhost:8000";
 const MAX_LENGTH = 120;
@@ -65,13 +65,13 @@ const PlacesCard = () => {
     );
   };
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <SkeletonCard />
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div>
+        <Spinner/>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -161,7 +161,7 @@ const PlacesCard = () => {
                          See Popular Place
                       </button>
                       </Link>
-                      {/* <img src={placegif} className="w-12 h-10"/> */}
+                      <img src={placegif} className="w-12 h-12"/>
                     </div>
                   </div>
                 </motion.div>

@@ -5,7 +5,8 @@ import SearchBox from "../../component/HomeSection/SearchBox";
 import usePagination from "../../context/usePagination";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImLocation2 } from "react-icons/im";
-// import hotelgif from '../../images/hotel.gif'
+import Spinner from "../../CommomData/Spinner";
+import hotelgif from '../../images/hotels.gif'
 
 const HotelCard = () => {
   const [hotels, setHotels] = useState([]);
@@ -59,10 +60,16 @@ const HotelCard = () => {
     prevPage,
   } = usePagination(filteredHotels, 6);
 
-  if (loading) {
-    return <div>fetching...</div>;
+  if(currentItems.length === 0){
+    return <div>Sorry No data found...</div>
   }
-
+  if (loading) {
+    return (
+      <div>
+        <Spinner/>
+      </div>
+    );
+  }
   return (
     <>
       <div className="relative h-screen  flex flex-col items-center justify-center bg-gradient-to-b from-black to-transparent">
@@ -152,7 +159,7 @@ const HotelCard = () => {
                         See Details
                       </button>
                       </Link>
-                      {/* <img src={hotelgif} className="w-12 h-10"/> */}
+                      <img src={hotelgif} className="w-12 h-10"/>
                     </div>
                  
                       </div>

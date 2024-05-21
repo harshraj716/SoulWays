@@ -5,6 +5,8 @@ import SearchBox from "../../component/HomeSection/SearchBox";
 import usePagination from "../../context/usePagination";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImLocation2 } from "react-icons/im";
+import Spinner from "../../CommomData/Spinner";
+import guideGif from '../../images/guide.gif'
 
 const GuideCard = () => {
   const [guides, setGuides] = useState([]);
@@ -62,7 +64,9 @@ const GuideCard = () => {
   } = usePagination(filteredGuides, 6);
 
   if (loading) {
-    return <div>fetching...</div>;
+    return <div>
+      <Spinner/>
+    </div>;
   }
 
   return (
@@ -144,10 +148,15 @@ const GuideCard = () => {
                       <div className="text-sm text-gray-600">
                         Experience: {guide.Experience}
                       </div>
+                      <div className="flex justify-between">
                       <div className="text-sm text-gray-600">
                         Category: {guide.Category}
                       </div>
+                      <img src={guideGif} className="w-12 h-12"/>
+                      </div>
+                     
                     </div>
+                    
                   </div>
                 </motion.div>
               ))}

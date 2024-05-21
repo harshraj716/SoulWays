@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ImLocation2 } from "react-icons/im";
 import { FaBowlFood } from "react-icons/fa6";
 import Spinner from "../../CommomData/Spinner";
-// import foodGif from '../../images/food.gif'
+import foodGif from '../../images/restro.gif'
 
 const BASE_URL = "http://localhost:8000";
 const MAX_LENGTH = 120;
@@ -147,7 +147,7 @@ const RestaurantsCard = () => {
                           See Dishes
                         </button>
                       </Link>
-                         {/* <img src={foodGif} className="w-12 h-10"/> */}
+                         <img src={foodGif} className="w-12 h-10"/>
                     </div>
                   </div>
                 </motion.div>

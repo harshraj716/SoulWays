@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import Spinner from "../../CommomData/SkeletonCard";
+import Spinner from "../../CommomData/Spinner";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import hotelgif from '../../images/hoteldetails.gif'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,25 +15,35 @@ import HotelBookingForm from "../../component/Booking/HotelBookingform";
 const HotelDetails = () => {
   const { id } = useParams();
   const [hotelDetails, setHotelDetails] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const BASE_URL = "http://localhost:8000";
 
   useEffect(() => {
     const fetchHotelDetails = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(`${BASE_URL}/api/hotels/${id}`);
-        console.log(response)
         setHotelDetails(response.data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching hotel details:", error);
+        setLoading(false);
       }
     };
 
     fetchHotelDetails();
   }, [id]);
 
+  if (loading) {
+    return (
+      <div>
+        <Spinner/>
+      </div>
+    );
+  }
   if (!hotelDetails) {
-    // return <Spinner />;
+    return <div>No Data Found...</div>;
   }
 
   return (
@@ -93,12 +104,15 @@ const HotelDetails = () => {
           </div>
 
           <div className="flex justify-between items-center mt-2">
-            {/* <span className="text-md ml-1 font-bold text-gray-600 ">
+            <div className="flex gap-4 items-center">
+            <span className="text-md ml-1 font-bold text-gray-600 ">
               ₹ {hotelDetails?.Price}/per person
-            </span> */}
+            </span>
             <span className="text-sm text-gray-600">
               {hotelDetails?.Discount}
             </span>
+            </div>
+            <img src={hotelgif} className="w-12 h-10"/>
           </div>
         </div>
         <Review hotelDetails={hotelDetails}/>

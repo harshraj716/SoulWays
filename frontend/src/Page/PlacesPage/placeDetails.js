@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-// import Spinner from "../../CommomData/SkeletonCard";
+import Spinner from "../../CommomData/Spinner";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import placegif from '../../images/placeDetails.gif'
 import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
@@ -15,25 +14,33 @@ import TourBookingForm from "../../component/Booking/TourBookingform";
 const PlaceDetails = () => {
   const { id } = useParams();
   const [placeDetails, setPlaceDetails] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const BASE_URL = "http://localhost:8000";
 
   useEffect(() => {
     const fetchPlaceDetails = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(`${BASE_URL}/api/places/${id}`);
         setPlaceDetails(response.data);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching place details:", error);
+        setLoading(false);
       }
     };
 
     fetchPlaceDetails();
   }, [id]);
-
-  // if (!placeDetails) {
-  //   return <Spinner />;
-  // }
+  
+  if (loading) {
+    return (
+      <div>
+        <Spinner/>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -125,6 +132,7 @@ const PlaceDetails = () => {
                       <a href={`${place.location}`} className="text-purple-600 hover:text-blue-700 font-bold rounded">
                         See Location
                       </a>
+                      <img src={placegif} className="w-12 h-12"/>
                     </div>
                   </div>
                 </div>

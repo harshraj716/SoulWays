@@ -5,10 +5,13 @@ import "../../Page/LoginPage.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-hot-toast';
 import GoogleLogin from "../OAuth/GoogleLogin";
+import { useAuth } from "../../context/AuthContext";
+import axios from "axios";
 
 const SignUp = () => {
   const BASE_URL = "http://localhost:8000";
   const navigate = useNavigate();
+  const { updateUser } = useAuth(); 
   const [isDisabled, setIsDisabled] = useState(false);
   const [signUpValue, setSignUpValue] = useState({
     username: "",
@@ -36,19 +39,11 @@ const SignUp = () => {
     setIsDisabled(true);
 
     try {
-      const response = await fetch(`${BASE_URL}/api/signup`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, email, password })
+      axios.defaults.withCredentials = true;
+      const response = await axios.post(`${BASE_URL}/api/signup`, {
+        username, email, password
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to sign up');
-      }
-       
+      updateUser(response.data.user); 
       toast.success('User signup successful!');
       navigate("/");
     } catch (error) {
