@@ -40,11 +40,6 @@ const GoogleLogin = () => {
     }
   };
 
-//   useEffect(() => {
-//     if (user) {
-//       navigate('/');
-//     }
-//   }, [user,navigate]);
 
   return (
     <>

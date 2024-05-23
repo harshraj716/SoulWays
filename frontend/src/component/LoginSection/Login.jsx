@@ -12,7 +12,6 @@ const Login = () => {
     const BASE_URL = "http://localhost:8000";
     const navigate = useNavigate();
     const [isDisabled, setIsDisabled] = useState(false);
-    const {user} = useAuth()
     const [signInValue, setSignInValue] = useState({
         email: "",
         password: "",

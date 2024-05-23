@@ -1,4 +1,4 @@
-const restaurants =[
+const restaurant=[
     {
         "name": "Spice Route",
         "address": "123 Main Street, Mumbai, Maharashtra",
@@ -15,7 +15,7 @@ const restaurants =[
             {"name": "Biryani", "price": 350, "image": "https://www.spiceroute.com/images/biryani.jpg"},
             {"name": "Fish Makhani", "price": 450, "image": "https://indianfoodfreak.com/wp-content/uploads/2012/10/makhani-fish-1.jpg"},
             {"name": "Prawn Thokku", "price": 520, "image": "https://happietrio.com/wp-content/uploads/2021/05/PrawnThokku-500x375.jpg"},
-            {"name": "Kadhai Chicken", "price": 530, "image": "https://pipingpotcurry.com/wp-content/uploads/2023/07/Kadai-Chicken-Recipe-Piping-Pot-Curry.jpg"}
+            {"name": "Kadhai Chicken", "price": 530, "image": "https://pipingpotcurry.com/wp-content/uploads/2023/07/Kadai-Chicken-Recipe-Piping-Pot-Curry.jpg"},
             
         ]   
     },
@@ -30,9 +30,9 @@ const restaurants =[
         "img": "https://media-cdn.tripadvisor.com/media/photo-o/19/8b/4e/ab/new-place.jpg",
         "website": "https://www.tajmahalrestaurant.com",
         "dishes": [
-            {"name": "Tandoori Chicken", "price": 280, "image": "https://www.tajmahalrestaurant.com/images/tandoori_chicken.jpg"},
-            {"name": "Mutton Rogan Josh", "price": 320, "image": "https://www.tajmahalrestaurant.com/images/rogan_josh.jpg"},
-            {"name": "Kebabs", "price": 250, "image": "https://www.tajmahalrestaurant.com/images/kebabs.jpg"},
+            {"name": "Tandoori Chicken", "price": 280, "image": "https://img.freepik.com/free-photo/closeup-shot-deliciously-prepared-chicken-served-with-onions-chili-sauce_181624-61705.jpg"},
+            {"name": "Mutton Rogan Josh", "price": 320, "image": "https://media.istockphoto.com/id/608005280/photo/mutton-rogan-josh-mutton-curry-indian-cuisine.jpg?s=612x612&w=0&k=20&c=F-sjeDrKuwqVh51seSkRV7Lng8ujiObyJPDxLvz3oOM="},
+            {"name": "Kebabs", "price": 250, "image": "https://media.istockphoto.com/id/912629972/photo/chicken-kebab-with-bell-pepper.jpg?s=612x612&w=0&k=20&c=d9LhLaL-prEprEFKp-P1nKjnTG4si89jFbL9PD79vRI="},
             {"name": "Peri Peri Chicken", "price": 340, "image": "https://images.getrecipekit.com/20231209021159-andy-20cooks-20-20chicken-20spatchcock-20with-20peri-20peri-20marinade.jpg?aspect_ratio=4:3&quality=90&"},
             {"name": "Spicy Chicken Masala", "price": 250, "image": "https://static.toiimg.com/thumb/58394256.cms?imgsize=104892&width=800&height=800"},
             {"name": "Malai Chicken", "price": 200, "image": "https://pipingpotcurry.com/wp-content/uploads/2023/08/Malai-Chicken-in-White-Gravy-Recipe-Piping-Pot-Curry.jpg"}
@@ -49,9 +49,9 @@ const restaurants =[
         "img": "https://b.zmtcdn.com/data/pictures/1/19760881/8e6d05f389bd590f57c9e775765055c9.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
         "website": "https://www.chowpattychaat.com",
         "dishes": [
-            {"name": "Pani Puri", "price": 50, "image": "https://www.chowpattychaat.com/images/pani_puri.jpg"},
-            {"name": "Bhel Puri", "price": 60, "image": "https://www.chowpattychaat.com/images/bhel_puri.jpg"},
-            {"name": "Sev Puri", "price": 60, "image": "https://www.chowpattychaat.com/images/sev_puri.jpg"},
+            {"name": "Pani Puri", "price": 50, "image": "https://st2.depositphotos.com/5653638/11508/i/450/depositphotos_115086216-stock-photo-pani-puri-or-panipuri-golgappe.jpg"},
+            {"name": "Bhel Puri", "price": 60, "image": "https://www.indianveggiedelight.com/wp-content/uploads/2017/03/bhel-puri-featured.jpg"},
+            {"name": "Sev Puri", "price": 60, "image": "https://ministryofcurry.com/wp-content/uploads/2022/07/Dahi-Puri_-3.jpg"},
             {"name": "Sandwich", "price": 70, "image": "https://static.toiimg.com/thumb/83740315.cms?imgsize=361903&width=800&height=800"},
             {"name": "Batata Puri", "price": 80, "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/sev-puri-recipe.jpg"},
         ]
@@ -71,7 +71,7 @@ const restaurants =[
             {"name": "Thukpa", "price": 150, "image": "https://www.darjeelingexpress.com/images/thukpa.jpg"},
             {"name": "Sel Roti", "price": 80, "image": "https://www.darjeelingexpress.com/images/sel_roti.jpg"},
             {"name": "Sidu", "price": 90, "image": "https://images.hindi.news18.com/ibnkhabar/uploads/2021/09/Siddu.jpg"},
-            {"name": "Pitika", "price": 105, "image": "https://www.sunitabhuyan.net/wp-content/uploads/2022/03/IMG_20220305_234852-scaled.jpg"}
+            {"name": "Pitika", "price": 105, "image": "https://www.sunitabhuyan.net/wp-content/uploads/2022/03/IMG_20220305_234852-scaled.jpg"},
         ]
     },
     {
@@ -110,7 +110,7 @@ const restaurants =[
             {"name": "Idli", "price": 60, "image": "https://www.dakshinrasoi.com/images/idli.jpg"},
             {"name": "Sambar Vada", "price": 100, "image": "https://www.dakshinrasoi.com/images/sambar_vada.jpg"},
             {"name": "Uttapam", "price": 120, "image": "https://www.cookingcarnival.com/wp-content/uploads/2022/02/Uttapam-recipe.jpg"},
-            {"name": "Upama", "price": 130, "image": "https://m.media-amazon.com/images/I/81jyhClhHHL._AC_UF350,350_QL80_.jpg"}
+            {"name": "Upama", "price": 130, "image": "https://m.media-amazon.com/images/I/81jyhClhHHL._AC_UF350,350_QL80_.jpg"},
         ]
     },
     {
@@ -124,11 +124,11 @@ const restaurants =[
         "img": "https://b.zmtcdn.com/data/reviews_photos/080/fa984e4ae6c936ea3f99acec18fb8080_1445854684.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
         "website": "https://www.mumbaimasala.com",
         "dishes": [
-            {"name": "Vada Pav", "price": 40, "image": "https://www.mumbaimasala.com/images/vada_pav.jpg"},
-            {"name": "Pav Bhaji", "price": 60, "image": "https://www.mumbaimasala.com/images/pav_bhaji.jpg"},
-            {"name": "Misal Pav", "price": 80, "image": "https://www.mumbaimasala.com/images/misal_pav.jpg"},
+            {"name": "Vada Pav", "price": 40, "image": "https://i.ytimg.com/vi/atsGQroxcuc/maxresdefault.jpg"},
+            {"name": "Pav Bhaji", "price": 60, "image": "https://media.istockphoto.com/id/1155185428/photo/indian-spicy-food-paav-bhaji-or-pav-bhaji.jpg?s=612x612&w=0&k=20&c=AMT1hmTm1xhTT0KmGsGPRyU6cPe-HFJuvkOgiT0m3Jo="},
+            {"name": "Misal Pav", "price": 80, "image": "https://thumbs.dreamstime.com/b/misal-pav-buns-smeared-butter-served-spicy-sprouts-curry-trail-mixture-chopped-onions-chilli-lemons-bun-indian-starter-171494146.jpg"},
             {"name": "Keema Pav", "price": 85, "image": "https://swatisani.net/kitchen/wp-content/uploads/2015/06/IMG_8841.jpg"},
-            {"name": "Anda Pav", "price": 90, "image": "https://i.pinimg.com/736x/c0/3d/a7/c03da754bdc0e16b891d613e6d3001a4.jpg"}
+            {"name": "Anda Pav", "price": 90, "image": "https://i.pinimg.com/736x/c0/3d/a7/c03da754bdc0e16b891d613e6d3001a4.jpg"},
         ]
     },
     {
@@ -537,4 +537,5 @@ const restaurants =[
         ]
     },
 ]
-module.exports = restaurants;
+
+module.exports = restaurant;

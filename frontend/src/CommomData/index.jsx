@@ -82,32 +82,6 @@ export const review=[
   }
 ]
 
-export const socialLinks = [
-  {
-    id: 1,
-    label: "Facebook",
-    icon: FaFacebook,
-    url: "#",
-  },
-  {
-    id: 2,
-    label: "Linkedin",
-    icon: FaLinkedin,
-    url: "#",
-  },
-  {
-    id: 3,
-    label: "Twitter",
-    icon: FaTwitter,
-    url: "#",
-  },
-  {
-    id: 4,
-    label: "Instagram",
-    icon: FaInstagram,
-    url: "#",
-  },
-];
 
 export const contactDetails = [
   {
@@ -172,9 +146,9 @@ export const SUPPORT = [
 export const Icons = [
   {
     id: 1,
-    name: "Facebook",
+    name: "Github",
     icon: FaGithub,
-    url: "#",
+    url: "https://github.com/harshraj716",
   },
   {
     id: 2,
@@ -192,7 +166,7 @@ export const Icons = [
     id: 4,
     name: "Instagram",
     icon: FaInstagram,
-    url: "#",
+    url: "https://www.instagram.com/yourskrishna__/?hl=en",
   },
 ];
 

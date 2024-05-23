@@ -2,7 +2,6 @@ const hotelsData = require('../data/hotelsData');
 const { Hotel } = require('../models'); 
 
 
-
 exports.createBulkHotels = async (req, res) => {
   try {
     const hotels = hotelsData;

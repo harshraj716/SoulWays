@@ -1,18 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Tour from './HotelBookingList/Tour';
 import { useAuth } from '../context/AuthContext';
 import defaultAvatar from '../images/profile.avif';
+import toast from "react-hot-toast";
+import {  useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
-  const { user } = useAuth();
+  const { user ,logout} = useAuth();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await logout(); 
+      toast.success("User logout successfully!");
+      navigate('/');
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
 
   return (
     <div>
       <Tour subpage='profile'/>
         <div className="container mx-auto">
-          <div className="flex justify-center items-center h-screen">
+          <div className="flex justify-center  h-screen">
             <motion.div
               className={`shadow-2xl rounded-[2rem]`}
               style={{ width: '100%', paddingTop: '3em' }}
@@ -55,7 +67,7 @@ const UserProfile = () => {
               <div className="text-center py-4">
                 <span className="text-gray-500">
                   come back later?{' '}
-                  <button className="text-red-500" to="/">
+                  <button className="text-red-500" onClick={handleLogout}>
                     Logout
                   </button>
                 </span>

@@ -2,7 +2,7 @@ import React from "react";
 import NavLink from "./NavLink";
 import { Dropdown, DropdownItem, DropdownDivider } from "flowbite-react";
 import MobileMenu from "./MobileMenu";
-import { Link, useNavigate ,useParams} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { navLinks } from "../CommomData";
 import { FaHome, FaCog, FaSignOutAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -12,7 +12,7 @@ import defaultAvatar from '../images/profile.avif';
 const Header = () => {
   const { user,logout } = useAuth();
   const navigate = useNavigate();
-
+  console.log('user',user)
   const handleLogout = async () => {
     try {
       await logout(); 
@@ -69,12 +69,16 @@ const Header = () => {
               >
                 {/* Dropdown items */}
                 <div className="flex flex-col">
+                  <Link to='/'>
                   <DropdownItem className="px-4 py-2 hover:bg-gray-400">
                     <FaHome className="mr-4 text-lg font-bold" /> Home
                   </DropdownItem>
+                  </Link>
+                  <Link to='/user/profile'>
                   <DropdownItem className="px-4 py-2 bg-transparent hover:bg-gray-400">
                     <FaCog className="mr-2 text-lg font-bold" /> Profile
                   </DropdownItem>
+                  </Link>
                   <DropdownDivider className="border-gray-500" />
                   <DropdownItem
                     className="px-4 py-2 bg-transparent hover:bg-gray-400"

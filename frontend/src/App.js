@@ -55,7 +55,7 @@ const AppContent = () => {
                 <Route path="/guides" element={<ProtectedRoute><GuideCard/></ProtectedRoute>} />
                 <Route path="/restaurants" element={<ProtectedRoute><Restaurant/></ProtectedRoute>} />
                 <Route path="/restaurants/dishes/:id" element={<ProtectedRoute><RestroDishes/></ProtectedRoute>} />   
-                 <Route path="/contact-us" element={<ContactUs/>} />
+                 <Route path="/contact-us" element={<ProtectedRoute><ContactUs/></ProtectedRoute>} />
             </Routes>
             {location.pathname !== '/login' && <Footer />}
         </div>

@@ -3,18 +3,8 @@ import { motion } from "framer-motion";
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import axios from 'axios'
-// import { useForm } from "react-hook-form";
-// import { yupResolver } from '@hookform/resolvers/yup';
-// import * as yup from 'yup';
 import { useAuth } from "../../context/AuthContext";
 
-// const schema = yup.object().shape({
-//   fullName: yup.string().required("Full Name is required"),
-//   email: yup.string().email("Invalid email address").required("Email is required"),
-//   phoneNumber: yup.string().required("Phone Number is required"),
-//   tourDate: yup.date().required("Tour Date is required"),
-//   guide: yup.string().required("Guide is required"),
-// });
 
 const TourBookingForm = ({ placeDetails }) => {
   const BASE_URL = "http://localhost:8000";

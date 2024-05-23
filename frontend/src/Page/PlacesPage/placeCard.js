@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchBox from "../../component/HomeSection/SearchBox";
@@ -10,13 +10,15 @@ import placegif from '../../images/place.gif'
 
 const BASE_URL = "http://localhost:8000";
 const MAX_LENGTH = 120;
+
 const PlacesCard = () => {
   const [places, setPlaces] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const [expandedItems, setExpandedItems] = useState([]);
+
+  const resultsRef = useRef(null);
 
   useEffect(() => {
     const fetchPlaces = async () => {
@@ -65,17 +67,24 @@ const PlacesCard = () => {
     );
   };
 
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    if (resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   if (loading) {
     return (
       <div>
-        <Spinner/>
+        <Spinner />
       </div>
     );
   }
 
   return (
     <>
-      <div className="relative h-screen  flex flex-col items-center justify-center bg-gradient-to-b from-black to-transparent">
+      <div className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-transparent">
         <div className="absolute inset-0">
           <img
             src="https://www.chardham-tours.com/wp-content/uploads/2018/07/uttarakhand-tour-packages.jpg"
@@ -95,11 +104,11 @@ const PlacesCard = () => {
             The whole world awaits.
           </motion.div>
           <div className="flex justify-center mb-10">
-            <SearchBox setSearchQuery={setSearchQuery}  placeholder={"serch top desination and places..."} />
+            <SearchBox setSearchQuery={handleSearch} placeholder={"Search top destinations and places..."} />
           </div>
         </div>
       </div>
-      <div className="container mx-auto mt-[5rem]">
+      <div className="container mx-auto mt-[5rem]" ref={resultsRef}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,8 +119,8 @@ const PlacesCard = () => {
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {currentItems.length === 0 ? (
-            <div className="text-center ">
-              <h1>Sorry ! no data found</h1>
+            <div className="text-center">
+              <h1>Sorry! No data found</h1>
             </div>
           ) : (
             <AnimatePresence>
@@ -123,13 +132,13 @@ const PlacesCard = () => {
                   exit={{ opacity: 0, y: -50 }}
                   className="transition-all duration-500 hover:shadow-xl cursor-pointer shadow-xl rounded-lg p-4"
                 >
-                    <div className="overflow-hidden">
-                      <img
-                        src={place.img[0]}
-                        alt={place.name}
-                        className="mx-auto h-[220px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110 rounded-lg"
-                      />
-                    </div>
+                  <div className="overflow-hidden">
+                    <img
+                      src={place.img[0]}
+                      alt={place.name}
+                      className="mx-auto h-[220px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110 rounded-lg"
+                    />
+                  </div>
                   <div className="mt-4">
                     <h3 className="text-lg font-semibold">{place.name}</h3>
                     <div className="flex items-center text-center gap-1 mt-2">
@@ -156,12 +165,12 @@ const PlacesCard = () => {
                       </span>
                     </div>
                     <div className="flex justify-between mt-5">
-                    <Link to={`/places-to-visit/${place.id}`}>
-                    <button className="bg-purple-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                         See Popular Place
-                      </button>
+                      <Link to={`/places-to-visit/${place.id}`}>
+                        <button className="bg-purple-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                          See Popular Place
+                        </button>
                       </Link>
-                      <img src={placegif} className="w-12 h-12"/>
+                      <img src={placegif} className="w-12 h-12" alt="Place Gif"/>
                     </div>
                   </div>
                 </motion.div>
@@ -169,7 +178,6 @@ const PlacesCard = () => {
             </AnimatePresence>
           )}
         </div>
-
         <div className="flex justify-center my-4">
           <ul className="flex">
             <li>

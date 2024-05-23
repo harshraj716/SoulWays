@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import Spinner from "../../CommomData/Spinner";
 import { Swiper, SwiperSlide } from "swiper/react";
 import placegif from '../../images/placeDetails.gif'
@@ -15,7 +15,8 @@ const PlaceDetails = () => {
   const { id } = useParams();
   const [placeDetails, setPlaceDetails] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const [expandedItems, setExpandedItems] = useState([]);
+  const MAX_LENGTH = 120;
   const BASE_URL = "http://localhost:8000";
 
   useEffect(() => {
@@ -33,6 +34,15 @@ const PlaceDetails = () => {
 
     fetchPlaceDetails();
   }, [id]);
+
+
+  const toggleShowFullText = (index) => {
+    setExpandedItems((prevExpandedItems) =>
+      prevExpandedItems.includes(index)
+        ? prevExpandedItems.filter((item) => item !== index)
+        : [...prevExpandedItems, index]
+    );
+  };
   
   if (loading) {
     return (
@@ -105,7 +115,7 @@ const PlaceDetails = () => {
             Popular Place In {placeDetails?.name}
           </motion.div>
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {placeDetails?.tourists.map((place) => (
+            {placeDetails?.tourists.map((place,index) => (
               <motion.div
                 key={place.id}
                 initial={{ opacity: 0, y: 50 }}
@@ -123,10 +133,23 @@ const PlaceDetails = () => {
                     <div className="flex justify-between items-center !mt-4">
                       <h3 className="text-lg font-semibold">{place.name}</h3>
                     </div>
-                    <div className="flex justify-between items-center ">
-                      <h3 className="text-sm font-semibold text-gray-600">{place.info}</h3>
+                    <div className="flex items-center mt-2">
+                      <span className="text-md text-gray-600 ml-1">
+                        {expandedItems.includes(index)
+                          ? place.info
+                          : place.info.slice(0, MAX_LENGTH)}
+                        {place.info.length > MAX_LENGTH && (
+                          <button
+                            className="text-purple-500 ml-1"
+                            onClick={() => toggleShowFullText(index)}
+                          >
+                            {expandedItems.includes(index)
+                              ? "read less"
+                              : "...read more"}
+                          </button>
+                        )}
+                      </span>
                     </div>
-                    
                     
                     <div className="flex justify-between">
                       <a href={`${place.location}`} className="text-purple-600 hover:text-blue-700 font-bold rounded">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchBox from "../../component/HomeSection/SearchBox";
@@ -6,7 +6,7 @@ import usePagination from "../../context/usePagination";
 import { motion, AnimatePresence } from "framer-motion";
 import { ImLocation2 } from "react-icons/im";
 import Spinner from "../../CommomData/Spinner";
-import guideGif from '../../images/guide.gif'
+import guideGif from '../../images/guide.gif';
 
 const GuideCard = () => {
   const [guides, setGuides] = useState([]);
@@ -15,6 +15,7 @@ const GuideCard = () => {
   const [loading, setLoading] = useState(false);
 
   const BASE_URL = "http://localhost:8000";
+  const resultsRef = useRef(null);
 
   useEffect(() => {
     const fetchGuides = async () => {
@@ -35,28 +36,33 @@ const GuideCard = () => {
 
   useEffect(() => {
     const filterGuides = () => {
-        const filtered = guides.filter((guide) => {
-          const name = guide.Guide_name || "";
-          const location = guide.guide_location || "";
-          const category = guide.Category || "";
-          return (
-            name.toLowerCase().includes(searchQuery?.toLowerCase() ?? "") ||
-            location.toLowerCase().includes(searchQuery?.toLowerCase() ?? "") ||
-            category.toLowerCase().includes(searchQuery?.toLowerCase() ?? "")
-          );
-        });
-        setFilteredGuides(filtered);
-      };
-      
+      const filtered = guides.filter((guide) => {
+        const name = guide.Guide_name || "";
+        const location = guide.guide_location || "";
+        const category = guide.Category || "";
+        return (
+          name.toLowerCase().includes(searchQuery?.toLowerCase() ?? "") ||
+          location.toLowerCase().includes(searchQuery?.toLowerCase() ?? "") ||
+          category.toLowerCase().includes(searchQuery?.toLowerCase() ?? "")
+        );
+      });
+      setFilteredGuides(filtered);
+    };
+
     filterGuides();
   }, [searchQuery, guides]);
-  
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    if (resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const {
     currentPage,
     currentItems,
     totalPages,
-    startPage,
-    endPage,
     pages,
     goToPage,
     nextPage,
@@ -64,11 +70,12 @@ const GuideCard = () => {
   } = usePagination(filteredGuides, 6);
 
   if (loading) {
-    return <div>
-      <Spinner/>
-    </div>;
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
   }
-
   return (
     <>
       {/* Hero Section */}
@@ -94,7 +101,7 @@ const GuideCard = () => {
             Explore Our Guides
           </motion.div>
           <div className="flex justify-center mb-10">
-            <SearchBox setSearchQuery={setSearchQuery} />
+          <SearchBox setSearchQuery={handleSearch} placeholder={"Search guides..."} />
           </div>
         </div>
       </div>
