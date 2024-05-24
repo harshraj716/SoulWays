@@ -45,7 +45,7 @@ const TestimonialSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <div className="flex flex-col items-start justify-center">
+              <div className="flex flex-col ">
                 <div className='flex justify-between gap-10'>
                   <img
                     src={testimonial.image}
@@ -60,9 +60,9 @@ const TestimonialSlider = () => {
                 </div>
                 <span className="text-lg font-bold mb-2">{testimonial.name}</span>
                 <p className="text-start text-gray-600">{testimonial.description}</p>
-                <div className="flex  flex-col gap-2 mt-10 items-center justify-start">
+                <div className="flex  flex-col gap-2 mt-10 items-start justify-start">
                   <span className="text-start  text-gray-700">{testimonial.tripplan}</span>
-                  <div className="flex items-center">
+                  <div className="flex items-center ">
                     {[...Array(5)].map((_, index) => (
                       <svg
                         key={index}

@@ -1233,6 +1233,89 @@ const placesData = [
       }
   ]  
   },
+  {
+    name: "Uttar Pradesh",
+    capital: "Lucknow",
+    about: "Uttar Pradesh is known for its rich cultural heritage and spiritual significance, home to some of India's most revered holy sites. It offers a blend of historical monuments, vibrant festivals, and diverse cuisine.",
+    climate: "Uttar Pradesh experiences extreme climatic conditions. Summers (April to June) are hot with temperatures soaring up to 45°C, while winters (December to February) are cold with temperatures dropping to around 5°C. The state also receives moderate to heavy rainfall from July to September.",
+    history: "Uttar Pradesh has a history that dates back to ancient times. It was the center of several major empires, including the Maurya, Gupta, and Mughal empires. The state is also significant in Hindu mythology and has been a key region in India's independence movement.",
+    time: "The best time to visit Uttar Pradesh is during the cooler months, from October to March, when the weather is pleasant for sightseeing and outdoor activities.",
+    food: "The cuisine of Uttar Pradesh is diverse and flavorful, featuring dishes like kebabs, biryanis, kachoris, and sweets like jalebi and petha. Each region in the state has its own culinary specialties, influenced by its history and culture.",
+    img: [
+      "https://www.savaari.com/blog/wp-content/uploads/2021/01/indian-temple-4782312_1920-1024x683.jpg",
+      "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/74/1e/e3.jpg",
+      "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/74/1e/e7.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/d5/92/64/hanuman-garhi-temple.jpg?w=1100&h=-1&s=1"
+    ],
+    tourist: [
+      {
+        name: "Vrindavan",
+        info: "Vrindavan, a town in Uttar Pradesh, is considered one of the most revered places for devotees of Lord Krishna. It is known for its numerous temples, each with its own unique charm and historical significance.",
+        images: "https://i.pinimg.com/474x/d4/87/76/d4877699356441533f4fd0e39e2d311c.jpg",
+        location: "https://www.bing.com/maps?q=location+of+vrindavan&FORM=HDRSC6&cp=27.572789%7E77.693338&lvl=16.0"
+      },
+      {
+        name: "Mathura",
+        info: "Mathura, the birthplace of Lord Krishna, is a city filled with ancient temples and historical sites. It is an important pilgrimage destination for Hindus and offers a deep spiritual experience.",
+        images: "https://i.pinimg.com/474x/d1/95/d5/d195d5b5b6266f023831be975f859fe9.jpg",
+        location: "https://maps.app.goo.gl/eAGMQW75ouMdsxte6"
+      },
+      {
+        name: "Ayodhya",
+        info: "Ayodhya, the birthplace of Lord Rama, is a city with immense religious significance. It is known for its ancient temples and ghats, making it a major pilgrimage site for Hindus.",
+        images: "https://i.pinimg.com/474x/27/be/2c/27be2c84a694ac886174052b85515291.jpg",
+        location: "https://maps.app.goo.gl/WFj1UrCQ8ndQ8vk6A"
+      },
+      {
+        name: "Varanasi",
+        info: "Varanasi, one of the world's oldest continually inhabited cities, is a major cultural and religious center in India. The city is famous for its ghats along the Ganges River, where pilgrims perform rituals and ceremonies.",
+        images: "https://i.pinimg.com/236x/01/1c/45/011c458ea52cb89f19bf98e29ad4c3e3.jpg",
+        location: "https://maps.app.goo.gl/FQ2NW4sUapHgXF7K9"
+      }
+    ],
+    guides: [
+      {
+        Guide_name: "Rahul Sharma",
+        Category: "Historical and Spiritual Tours",
+        guide_location: "Vrindavan",
+        State: "Uttar Pradesh",
+        Country: "India",
+        ProfileImg: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/0355c6102794621.5f3e8f2baaf0a.jpg",
+        Experience: "4 years",
+        Rating: 4.8
+      },
+      {
+        Guide_name: "Amit Verma",
+        Category: "Cultural and Heritage Tours",
+        guide_location: "Mathura",
+        State: "Uttar Pradesh",
+        Country: "India",
+        ProfileImg: "https://th.bing.com/th/id/OIP.JijhuhuKo0nto46FGDYq5QHaLF?w=1368&h=2048&rs=1&pid=ImgDetMain",
+        Experience: "8 years",
+        Rating: 4.7
+      },
+      {
+        Guide_name: "Sita Devi",
+        Category: "Pilgrimage Tours",
+        guide_location: "Ayodhya",
+        State: "Uttar Pradesh",
+        Country: "India",
+        ProfileImg: "https://th.bing.com/th/id/OIP.ny5DMld-roqntY5MXatlXAAAAA?rs=1&pid=ImgDetMain",
+        Experience: "7 years",
+        Rating: 4.9
+      },
+      {
+        Guide_name: "Ravi Tripathi",
+        Category: "Cultural and Historical Tours",
+        guide_location: "Varanasi",
+        State: "Uttar Pradesh",
+        Country: "India",
+        ProfileImg: "https://media.licdn.com/dms/image/C5103AQHqIRuLyyIpvQ/profile-displayphoto-shrink_800_800/0/1561613947597?e=2147483647&v=beta&t=ZaR50SXrqpHix6UHLDZQTKl1RFQ6G5R1Rn2FPdkIr_E",
+        Experience: "5 years",
+        Rating: 5.0
+      }
+    ]
+  }
 ];
 
 module.exports = placesData;
