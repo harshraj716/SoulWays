@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TestimonialSlider from "../../component/HomeSection/Testimonial";
+import team1 from '../../images/harsh.jpeg'
+import team2 from '../../images/saurav.jpeg'
+import avtar from '../../images/profile.avif'
 
 const AboutPage = () => {
   return (
@@ -81,18 +84,19 @@ const AboutPage = () => {
               transition={{ duration: 1 }}
             >
               <p className="text-lg mb-4">
-                Our mission at SoulWays is to inspire and empower travelers to
-                explore the world in a meaningful way. We are committed to
-                promoting sustainable tourism, supporting local communities, and
-                fostering cultural exchange. We believe that travel can be a
-                force for good, creating positive impacts for both travelers and
-                the destinations they visit.
+                SoulWays started as an Instagram page and quickly grew to over
+                7,000 followers, with an impressive engagement reach of over 10
+                million in just three months. This vibrant community inspired us
+                to create a full-fledged travel platform that welcomes all to
+                join us.
               </p>
               <p className="text-lg">
-                We strive to provide exceptional travel experiences that
-                prioritize the well-being of our planet and its people. Join us
-                on our journey to make the world a more connected, compassionate,
-                and curious place.
+                 Whether you're seeking adventure, relaxation, or
+                cultural enrichment, SoulWays invites you to be part of a
+                movement that values cultural exchange, environmental
+                stewardship, and social responsibility. Join us and discover a
+                world where travel is more than just sightseeing—it's about
+                finding your path and nourishing your soul.
               </p>
             </motion.div>
           </div>
@@ -124,12 +128,12 @@ const AboutPage = () => {
             className="bg-white rounded-lg p-8 shadow-lg text-center"
           >
             <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
+              src={team1}
               alt="Team Member"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
             <h3 className="text-xl font-bold mb-2 text-gray-800">Harsh Raj</h3>
-            <p className="text-gray-600">CEO & Founder</p>
+            {/* <p className="text-gray-600">CEO & Founder</p> */}
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -138,12 +142,14 @@ const AboutPage = () => {
             className="bg-white rounded-lg p-8 shadow-lg text-center"
           >
             <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
+              src={team2}
               alt="Team Member"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="text-xl font-bold mb-2 text-gray-800">Saurav Singh</h3>
-            <p className="text-gray-600">Chief Marketing Officer</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-800">
+              Saurav Singh
+            </h3>
+            {/* <p className="text-gray-600">Chief Marketing Officer</p> */}
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -152,19 +158,21 @@ const AboutPage = () => {
             className="bg-white rounded-lg p-8 shadow-lg text-center"
           >
             <img
-              src="https://randomuser.me/api/portraits/men/45.jpg"
+              src={avtar}
               alt="Team Member"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="text-xl font-bold mb-2 text-gray-800">Mike Johnson</h3>
-            <p className="text-gray-600">Head of Operations</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-800">
+              Anurag Kumar
+            </h3>
+            {/* <p className="text-gray-600">Head of Operations</p> */}
           </motion.div>
         </div>
       </div>
 
       {/* Testimonials section */}
       <div className=" bg-white">
-      <TestimonialSlider/>
+        <TestimonialSlider />
       </div>
 
       {/* Animation section */}

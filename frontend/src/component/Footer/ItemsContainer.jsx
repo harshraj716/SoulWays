@@ -33,7 +33,7 @@ const ItemsContainer = () => {
         <h1 className="text-white text-lg font-bold">Contact Details</h1>
         <ul className="flex flex-col text-white cursor-pointer gap-1 ">
           <li className="hover:text-gray-400">soalways@support.com</li>
-          <li className="hover:text-gray-400">7007263566</li>
+          <li className="hover:text-gray-400">+91 8936897141</li>
         </ul>
       </nav>
     </div>

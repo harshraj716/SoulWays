@@ -77,7 +77,7 @@ const ContactUs = () => {
           <div className="flex flex-col space-y-6">
             <div className="inline-flex space-x-2 items-center">
               <FaPhoneAlt className="text-teal-300 text-xl" />
-              <span>+91 7007263566</span>
+              <span>+91 8936897141</span>
             </div>
             <div className="inline-flex space-x-2 items-center">
               <IoMail className="text-teal-300 text-xl" />

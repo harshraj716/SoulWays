@@ -83,20 +83,6 @@ export const review=[
 ]
 
 
-export const contactDetails = [
-  {
-    id: 1,
-    icon: FaEnvelope,
-    text: "dheeraj700agrahari@gmail.com",
-  },
-  {
-    id: 2,
-    icon: FaInstagram,
-    text: "dheerajagrahari700",
-  },
-];
-
-
 
 export const COMPANY = [
   {
@@ -172,10 +158,10 @@ export const Icons = [
 
 
 
-
 export const destination = [
   { image: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/a4/47/00.jpg", title: 'Himanchal Pradesh' },
   { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/2e/13/22/caption.jpg?w=600&h=600&s=1", title: 'Rajasthan, India' },
+  { image: "https://www.savaari.com/blog/wp-content/uploads/2021/01/indian-temple-4782312_1920-1024x683.jpg", title: 'Uttar Pradesh, India ' },
   { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/62/bd/54/caption.jpg?w=600&h=600&s=1", title: 'Kerla, India ' },
   { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/64/5f/f1/caption.jpg?w=600&h=600&s=1", title: 'Mumbai, India' },
   { image: "https://www.gujarattourism.com/content/dam/gujrattourism/images/destinations/ahmedabad/banner-images/sabarmati-riverfront2.jpg", title: 'Gujrat India' },
