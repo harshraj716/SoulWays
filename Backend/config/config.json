@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "localhost",
+    "password": "7141",
     "database": "soulways_DEV",
     "host": "127.0.0.1",
     "dialect": "postgres"

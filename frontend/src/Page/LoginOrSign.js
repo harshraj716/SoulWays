@@ -38,8 +38,7 @@ const LoginOrSign = () => {
             <div className="content">
               <h3 className="loginh3">One of us ?</h3>
               <p className="loginp">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
+               
               </p>
               <button
                 onClick={handleSignInClick}

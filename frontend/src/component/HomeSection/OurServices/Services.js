@@ -38,7 +38,7 @@ const Services = () => {
      
    
             <motion.div
-              className="absolute bottom-0 left-0 right-0 p-4 text-center lg:text-start "
+              className="absolute bottom-0 left-2 right-0 p-4 text-center lg:text-start "
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}

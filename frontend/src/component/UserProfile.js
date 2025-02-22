@@ -8,6 +8,7 @@ import {  useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
   const { user ,logout} = useAuth();
+  console.log(user);
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
@@ -39,8 +40,14 @@ const UserProfile = () => {
 
               <div className="profile flex justify-center py-4">
                 <label htmlFor="profile">
-                  <img src={user?.photoURL || defaultAvatar} className={`profile_img1 profile_img2`} alt="avatar" />
+                {user?.photoURL ? (
+                  <img src={user?.photoURL} className={`profile_img1 profile_img2`} alt="avatar" />
+                ) : (
+                  <img src={defaultAvatar} className={`profile_img1 profile_img2`} alt="avatar" />
+                )}
+                  
                 </label>
+
               </div>
 
                 <div className=" flex flex-col items-center gap-6">
