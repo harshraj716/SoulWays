@@ -172,7 +172,7 @@ export const services =[
   { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/26/7a/2e/hotel-aqua-vibes.jpg?w=500&h=500&s=1", title: 'Hotels',link:'/hotels' },
   { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/9b/0a/b4/caption.jpg?w=600&h=600&s=1", title: 'Places for visit' ,link:'/places-to-visit' },
   { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/b7/29/80/caption.jpg?w=1400&h=-1&s=1", title: 'Guides',link:'/guides' },
-  { image: "https://media-cdn.tripadvisor.com/media/photo-s/2b/8c/85/7d/caption.jpg", title: 'Restaurants ' ,link:'/restaurants' },
+  { image: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chanwalrus-941861.jpg&fm=jpg", title: 'Restaurants ' ,link:'/restaurants' },
   // { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/cc/32/6c/landmark-resort.jpg?w=1400&h=-1&s=1", title: 'Resort',link:'/resort' },
   // { image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/c5/f4/4c/we-have-ice-routes-for.jpg?w=900&h=700&s=1", title: 'Mountain Trip',link:'/mountain-trip' },
 ]
