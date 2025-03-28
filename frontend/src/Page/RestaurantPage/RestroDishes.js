@@ -12,7 +12,8 @@ const RestroDishes = () => {
   const { id } = useParams();
   const [restaurantDetails, setRestaurantDetails] = useState(null);
 
-  const BASE_URL = "http://localhost:8000";
+ const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 
   useEffect(() => {
     const fetchRestaurantDetails = async () => {

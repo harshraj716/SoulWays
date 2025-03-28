@@ -17,7 +17,8 @@ const HotelDetails = () => {
   const [hotelDetails, setHotelDetails] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const BASE_URL = "http://localhost:8000";
+ const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 
   useEffect(() => {
     const fetchHotelDetails = async () => {

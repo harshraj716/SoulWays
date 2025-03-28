@@ -9,7 +9,8 @@ import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
 
 const SignUp = () => {
-  const BASE_URL = "http://localhost:8000";
+ const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   const navigate = useNavigate();
   const { updateUser } = useAuth(); 
   const [isDisabled, setIsDisabled] = useState(false);

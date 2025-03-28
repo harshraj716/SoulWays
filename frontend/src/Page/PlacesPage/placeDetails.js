@@ -17,7 +17,8 @@ const PlaceDetails = () => {
   const [loading, setLoading] = useState(false);
   const [expandedItems, setExpandedItems] = useState([]);
   const MAX_LENGTH = 120;
-  const BASE_URL = "http://localhost:8000";
+ const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 
   useEffect(() => {
     const fetchPlaceDetails = async () => {

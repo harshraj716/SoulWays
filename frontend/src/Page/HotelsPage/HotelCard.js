@@ -16,7 +16,8 @@ const HotelCard = () => {
 
   const resultsRef = useRef(null);
 
-  const BASE_URL = "http://localhost:8000";
+ const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 
   useEffect(() => {
     const fetchHotels = async () => {

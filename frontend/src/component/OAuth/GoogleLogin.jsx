@@ -9,7 +9,8 @@ import {useAuth} from '../../context/AuthContext'
 import axios from 'axios'
 
 const GoogleLogin = () => {
-  const BASE_URL = "http://localhost:8000";
+ const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   const [signInWithGoogle, loading] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const { user,updateUser} = useAuth();
